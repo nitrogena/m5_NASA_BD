@@ -4,16 +4,16 @@
         <item android:id="@+id/menuuno_opcionUno"
             android:checkable="false"
             android:icon="@mipmap/ic_launcher"
-            android:title="Mars Rovers Images"></item>
+            android:title="Today APOD"></item>
         <item android:id="@+id/menuuno_opcionDos"
             android:checkable="false"
 
-            android:title="Mars Rovers Images 2"
+            android:title="Mars Rovers Images"
             ></item>
         <item android:id="@+id/menuuno_opcionTres"
             android:checkable="false"
 
-            android:title="Mars Rovers Images 3 "
+            android:title="Favorites"
 
             ></item>
 

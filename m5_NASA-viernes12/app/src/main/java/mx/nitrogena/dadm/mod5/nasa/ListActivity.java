@@ -94,14 +94,6 @@ public class ListActivity extends AppCompatActivity {
         replaceFragment(TodayApodFragment.newInstance("name"));
 
 
-
-
-
-
-
-
-
-
         /*https://guides.codepath.com/android/Using-the-App-ToolBar*/
 
         navigationView.setNavigationItemSelectedListener(new NavigationView.OnNavigationItemSelectedListener(){

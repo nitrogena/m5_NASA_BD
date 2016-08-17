@@ -130,15 +130,22 @@ public class TodayApodFragment extends Fragment {
         switch (item.getItemId()) {
             case R.id.menuRedes_share_today_apod:
                 //Toast.makeText(getActivity(), "Hola", Toast.LENGTH_LONG ).show();
-                Snackbar.make(getView(), "Share", Snackbar.LENGTH_SHORT).show();
+                //Snackbar.make(getView(), "Share", Snackbar.LENGTH_SHORT).show();
 
                 shareText("APP: " + strUrl);
                 return true;
+            case R.id.menuRedes_favorites:
+
+                //Agregar a favoritos a la base de datos
+                Snackbar.make(getView(), "Favorites", Snackbar.LENGTH_SHORT).show();
+                agregarFavoritos();
 
             default:
                 return super.onOptionsItemSelected(item);
         }
     }
+
+
 
     private void shareText(String text){
         Intent shareIntent = new Intent(Intent.ACTION_SEND);
@@ -147,6 +154,8 @@ public class TodayApodFragment extends Fragment {
         startActivity(Intent.createChooser(shareIntent, "Compartir"));
     }
 
+    private void agregarFavoritos() {
+    }
 
 
 }

@@ -4,7 +4,7 @@
     <item
         android:id="@+id/menuRedes_share_today_apod"
         android:icon="@android:drawable/ic_menu_share"
-        android:title="Share"
+        android:title="@string/menuRedes_share"
         android:showAsAction="always"
         app:showAsAction="always">
 
@@ -13,7 +13,7 @@
     <item
         android:id="@+id/menuRedes_favorites"
         android:icon="@android:drawable/ic_menu_preferences"
-        android:title="Favorites"
+        android:title="@string/menuRedes_favorites"
         android:showAsAction="always"
         app:showAsAction="always">
 

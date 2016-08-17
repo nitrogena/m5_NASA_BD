@@ -1,13 +1,18 @@
 package mx.nitrogena.dadm.mod5.nasa;
 
 import android.content.Intent;
+import android.support.design.widget.Snackbar;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.support.v7.widget.Toolbar;
 import android.util.Log;
+import android.view.Menu;
+import android.view.MenuInflater;
+import android.view.MenuItem;
 import android.view.View;
 import android.widget.ImageView;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.squareup.picasso.Picasso;
 
@@ -25,6 +30,8 @@ public class DetailActivity extends AppCompatActivity  implements View.OnClickLi
     //SimpleDraweeView
     @BindView(R.id.adetail_iv_img)
     ImageView ivImg;
+
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -84,4 +91,43 @@ public class DetailActivity extends AppCompatActivity  implements View.OnClickLi
         Intent intent = new Intent(DetailActivity.this, ListActivity.class);
         startActivity(intent);
     }
+
+    @Override
+    public boolean onCreateOptionsMenu(Menu menu){
+        getMenuInflater().inflate(R.menu.menu_redes, menu);
+        //super.onCreateOptionsMenu(menu);
+        return true;
+    }
+
+    public boolean onOptionsItemSelected(MenuItem item) {
+        switch (item.getItemId()) {
+            case R.id.menuRedes_share_today_apod:
+                //Toast.makeText(getActivity(), "Hola", Toast.LENGTH_LONG ).show();
+                //Snackbar.make(getView(), "Share", Snackbar.LENGTH_SHORT).show();
+
+                shareText("APP: en detail activity" );
+                return true;
+            case R.id.menuRedes_favorites:
+
+                //Agregar a favoritos a la base de datos
+                Snackbar.make(findViewById(android.R.id.content), "Favorites", Snackbar.LENGTH_SHORT).show();
+
+                agregarFavoritos();
+
+            default:
+                return super.onOptionsItemSelected(item);
+        }
+    }
+
+    private void shareText(String text){
+        Intent shareIntent = new Intent(Intent.ACTION_SEND);
+        shareIntent.setType("text/plain");
+        shareIntent.putExtra(Intent.EXTRA_TEXT, text);
+        startActivity(Intent.createChooser(shareIntent, "Compartir"));
+    }
+
+    private void agregarFavoritos() {
+    }
+
+
 }

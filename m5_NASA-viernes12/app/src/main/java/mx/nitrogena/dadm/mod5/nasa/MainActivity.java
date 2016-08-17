@@ -22,6 +22,8 @@ import retrofit2.Response;
 
 public class MainActivity extends AppCompatActivity implements View.OnClickListener{
 
+    /*AL PARECER ESTA ACTIVIDAD YA NO SE USA*/
+
     //USANDO LA CLASE DE BUTTER KNIFE
     @BindView(R.id.amain_tv_copyright) TextView tvCopyright;
     @BindView(R.id.amain_tv_date) TextView tvDate;

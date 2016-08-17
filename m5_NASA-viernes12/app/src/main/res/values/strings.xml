@@ -26,6 +26,9 @@
     <string name="permission_rationale">"Contacts permissions are needed for providing email
         completions."
     </string>
+    <string name="menuListFragment_share">Share</string>
+    <string name="menuRedes_share">Share</string>
+    <string name="menuRedes_favorites">Favorites</string>
 
 
 </resources>

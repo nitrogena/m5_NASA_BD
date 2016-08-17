@@ -124,22 +124,24 @@ public class ListFragment extends Fragment {
 
     @Override
     public void onCreateOptionsMenu(Menu menu, MenuInflater inflater){
-        inflater.inflate(R.menu.menu_redes, menu);
+        inflater.inflate(R.menu.menu_list_fragment, menu);
         super.onCreateOptionsMenu(menu, inflater);
     }
 
     public boolean onOptionsItemSelected(MenuItem item) {
         switch (item.getItemId()) {
-            case R.id.menuRedes_share_today_apod:
+            case R.id.menuListFragment_share_today_apod:
                 //Toast.makeText(getActivity(), "Hola", Toast.LENGTH_LONG ).show();
 
-                Snackbar.make(getView(), "Favoritos", Snackbar.LENGTH_SHORT).show();
+                Snackbar.make(getView(), "SHARE LIST", Snackbar.LENGTH_SHORT).show();
 
 
                 return true;
 
+
             default:
                 return super.onOptionsItemSelected(item);
         }
+
     }
 }
