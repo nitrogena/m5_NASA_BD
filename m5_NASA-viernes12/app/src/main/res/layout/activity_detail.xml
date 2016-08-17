@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+
+    tools:context="mx.nitrogena.dadm.mod5.nasa.DetailActivity"
+    android:orientation="vertical">
+
+
+
+
+    <android.support.v7.widget.Toolbar
+        android:id="@+id/toolbar"
+        android:minHeight="?attr/actionBarSize"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:titleTextColor="@android:color/white"
+        android:background="?attr/colorPrimary">
+    </android.support.v7.widget.Toolbar>
+
+    <TextView
+        android:id="@+id/adetail_tv_cameraFullName"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="camera fullName"/>
+
+    <TextView
+        android:id="@+id/adetail_tv_earthDate"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="earth date"/>
+
+    <TextView
+        android:id="@+id/adetail_tv_roverLandingdate"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="rover landing date"/>
+
+    <ImageView
+        android:id="@+id/adetail_iv_img"
+        android:layout_width="250dp"
+        android:layout_height="250dp"
+        android:src="@mipmap/ic_launcher"
+        android:layout_gravity="center_horizontal"/>
+    <Button
+        android:id="@+id/adetail_btn_regresar"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Regresar"/>
+
+</LinearLayout>

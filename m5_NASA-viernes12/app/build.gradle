@@ -1,0 +1,100 @@
+apply plugin: 'com.android.application'
+apply plugin: 'android-apt'
+
+android {
+    compileSdkVersion 23
+    buildToolsVersion "23.0.3"
+
+    defaultConfig {
+        applicationId "mx.nitrogena.dadm.mod5.nasa"
+        minSdkVersion 15
+        targetSdkVersion 23
+        versionCode 1
+        versionName "1.0"
+    }
+
+    signingConfigs{
+        //firmar con el certificado de debug de android
+        debug.initWith(signingConfigs.debug)
+        release{
+            /*//forma de firmado se pone aqui
+            storeFile file("release.keystore")
+            storePassword "PASSWORD"
+            keyAlias "gradleforandroid"
+            keyPassword "PASSWORD"*/
+        }
+    }
+
+    buildTypes {
+        //EL OBJETO buildTypes TIENE DOS OBJETOS realese Y debug
+        //HAGO COMPILACION DEL TIPO RELEASE SE USA UN VALOR DIFRENTE AL DE COMPILACION CON DEBUG
+        release {
+            minifyEnabled false     //PARA HACER UN CODIGO MAS PEQUEÑO
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+            //PARA TENER VARIABLES PARA CADA buildTypes
+            //buildConfigField "String", "BUILD_TYPE", "\"release\""
+            buildConfigField "String", "URL", "\"https://api.nasa.gov\""
+            signingConfig signingConfigs.release
+
+        }
+
+        debug {
+            minifyEnabled true
+            //buildConfigField "String", "BUILD_TYPE", "release"
+            buildConfigField "String", "URL", "\"https://api.nasa.gov\""    //CAMBIAR NOMBRE SI SE NECESITA
+            //buildConfigField "String", "BUILD_TYPEP", "\"debug\""
+
+        }
+    }
+
+    //PARA TENER UNA VERSION PREMIUM Y UNA FREE
+    //TENER DIFERENTES VERSIONES DEL MISMO PROYECTO CON productFlavors
+    //para cada product flavor debo tener una carpeta con la misma estructura que src/main
+    // (java, res y android manifest) que tendra clases especificas de esas versiones
+    productFlavors{
+        old_version{
+            applicationId "mx.nitrogena.dadm.mod5.old_version"
+            /*PUEDO COLOCAR Y CAMBIAR LO SIGUIENTE DEL DEFAULTCONFIG
+            * minSdkVersion 15
+        targetSdkVersion 23
+        versionCode 1
+        versionName "1.0"*/
+        }
+        actual_version{
+            applicationId "mx.nitrogena.dadm.mod5.actual_version"
+        }
+    }
+
+
+}
+
+dependencies {
+    //AGREGAMOS BIBLIOTECAS
+    //COMPILAR BIBLIOTECAS DENTRO DE libs
+    compile fileTree(dir: 'libs', include: ['*.jar'])
+    //PONEMOS BIBLIOTECAS PARA NUESTRA APLICACION
+    testCompile 'junit:junit:4.12'
+    //BIBLIOTECAS QUE SE DESCARGAN
+    //compile 'com.android.support:appcompat-v7:23.4.0'
+    compile 'com.android.support:appcompat-v7:23.1.1'
+    //PUEDO COMPILAR BIBLIOTECAS PARA CADA PRODUCT FLAVOR, EJEMPLO:
+    //old_versionCompile 'com.android.design.salaala'
+
+    //Agregamos para el ejercicio del 30-7-196
+    compile 'com.squareup.retrofit2:retrofit:2.1.0'
+    compile 'com.squareup.retrofit2:converter-gson:2.0.2'
+    compile 'com.squareup.okhttp3:logging-interceptor:3.3.1'
+    compile 'com.squareup.picasso:picasso:2.5.2'
+
+    //AGREGADO EL 05-8-16
+    compile 'com.jakewharton:butterknife:8.2.1'
+    apt 'com.jakewharton:butterknife-compiler:8.2.1'
+
+    compile 'com.android.support:recyclerview-v7:23.1.1'
+
+    //AGREGADO EL 6-8-16
+    compile 'com.facebook.fresco:fresco:0.12.0'
+    compile 'com.android.support:cardview-v7:23.1.1'
+    compile 'com.android.support:design:23.1.1'
+    compile 'com.facebook.android:facebook-android-sdk:4.14.1'
+}

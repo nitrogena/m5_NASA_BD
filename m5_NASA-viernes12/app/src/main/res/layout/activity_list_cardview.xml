@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.v7.widget.CardView xmlns:tools="http://schemas.android.com/tools"
+    xmlns:fresco="http://schemas.android.com/apk/res-auto"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:id="@+id/card_view"
+    >
+
+
+
+
+
+
+
+    <!--
+    <TextView
+    android:id="@+id/alistcv_tv_id"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content" />
+
+    <TextView
+        android:id="@+id/alistcv_tv_sol"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" />
+-->
+
+    <!--se quito el image view para usar fresco 06/8/16
+    <ImageView
+        android:id="@+id/alistcv_iv_img"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" />
+        -->
+
+    <com.facebook.drawee.view.SimpleDraweeView
+        android:layout_width="match_parent"
+        android:layout_height="250dp"
+        android:id="@+id/alistcv_iv_img"
+        android:layout_gravity="center_horizontal"
+        fresco:actualImageScaleType="fitXY"/>
+
+    <!--
+    <TextView
+        android:id="@+id/alistcv_tv_earthDate"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" />
+        -->
+
+    <TextView
+        android:id="@+id/alistcv_tv_camera_fullName"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="bottom|center"
+        android:text="Camera Full Name"/>
+
+    <!--
+    <TextView
+        android:id="@+id/alistcv_tv_"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" />
+-->
+
+</android.support.v7.widget.CardView>
