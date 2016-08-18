@@ -1,5 +1,6 @@
 package mx.nitrogena.dadm.mod5.nasa;
 
+import android.content.ContentValues;
 import android.content.Intent;
 import android.support.design.widget.Snackbar;
 import android.support.v7.app.AppCompatActivity;
@@ -18,8 +19,17 @@ import com.squareup.picasso.Picasso;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;
+import mx.nitrogena.dadm.mod5.nasa.sql.ConstantesBD;
+import mx.nitrogena.dadm.mod5.nasa.sql.OperacionesDatos;
 
 public class DetailActivity extends AppCompatActivity  implements View.OnClickListener{
+
+    /*PARA FAVORITOS MR*/
+    String cameraFullname;
+    String earthDate;
+    String imgSrc;
+    String roverLandingdate;
+
 
     //USANDO LA CLASE DE BUTTER KNIFE
     @BindView(R.id.adetail_tv_cameraFullName)
@@ -30,6 +40,8 @@ public class DetailActivity extends AppCompatActivity  implements View.OnClickLi
     //SimpleDraweeView
     @BindView(R.id.adetail_iv_img)
     ImageView ivImg;
+
+
 
 
 
@@ -48,11 +60,19 @@ public class DetailActivity extends AppCompatActivity  implements View.OnClickLi
         setSupportActionBar(toolbar);
 
         Bundle bdlExtras = getIntent().getExtras();
-
+        /*
         String cameraFullname = bdlExtras.getString("cameraFullname");
         String earthDate = bdlExtras.getString("earthdate");
         String imgSrc = bdlExtras.getString("img");
         String roverLandingdate = bdlExtras.getString("roverLandingdate");
+*/
+
+
+        cameraFullname = bdlExtras.getString("cameraFullname");
+        earthDate = bdlExtras.getString("earthdate");
+        imgSrc = bdlExtras.getString("img");
+        roverLandingdate = bdlExtras.getString("roverLandingdate");
+
 
         Log.d("logDetail - titulo: ", cameraFullname);
         Log.d("logDetail - imgSrc: ", imgSrc);
@@ -112,7 +132,8 @@ public class DetailActivity extends AppCompatActivity  implements View.OnClickLi
                 //Agregar a favoritos a la base de datos
                 Snackbar.make(findViewById(android.R.id.content), "Favorites", Snackbar.LENGTH_SHORT).show();
 
-                agregarFavoritos();
+                OperacionesDatos db = new OperacionesDatos(DetailActivity.this);
+                agregarFavoritos(db);
 
             default:
                 return super.onOptionsItemSelected(item);
@@ -126,7 +147,20 @@ public class DetailActivity extends AppCompatActivity  implements View.OnClickLi
         startActivity(Intent.createChooser(shareIntent, "Compartir"));
     }
 
-    private void agregarFavoritos() {
+    private void agregarFavoritos(OperacionesDatos db) {
+        ContentValues contentValues = new ContentValues();
+        contentValues.put(ConstantesBD.COLUMNE_FAV_MR_CAMERA_FULL_NAME, cameraFullname);
+        contentValues.put(ConstantesBD.COLUMNE_FAV_MR_EARTH_DATE, earthDate);
+        contentValues.put(ConstantesBD.COLUMNE_FAV_MR_IMG_SRC, imgSrc);
+        contentValues.put(ConstantesBD.COLUMNE_FAV_MR_ROVER_LANDING_DATE, roverLandingdate);
+
+        db.insertarFavoriteMR(contentValues);
+
+
+        /*PARA VER BD
+         eN ANDROID DEVICE MONITOR, SELECCIONAR EL EMULADOR DE LADO IZQ, LUEGO
+         FILE EXPLORER DE LA DERECHA, LUEGO DATA/DATA/ PAQUETE DE LA APLICACION*/
+
     }
 
 

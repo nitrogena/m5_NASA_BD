@@ -1,6 +1,7 @@
 package mx.nitrogena.dadm.mod5.nasa.fragment;
 
 import android.app.Fragment;
+import android.content.ContentValues;
 import android.content.Intent;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
@@ -25,6 +26,8 @@ import mx.nitrogena.dadm.mod5.nasa.R;
 import mx.nitrogena.dadm.mod5.nasa.data.ApodService;
 import mx.nitrogena.dadm.mod5.nasa.data.Data;
 import mx.nitrogena.dadm.mod5.nasa.model.APOD;
+import mx.nitrogena.dadm.mod5.nasa.sql.ConstantesBD;
+import mx.nitrogena.dadm.mod5.nasa.sql.OperacionesDatos;
 import retrofit2.Call;
 import retrofit2.Callback;
 import retrofit2.Response;
@@ -47,6 +50,16 @@ public class TodayApodFragment extends Fragment {
 
 
     public String strUrl;
+
+    //PARA BD
+    public String strCopyright;
+    public String strDate;
+    public String strExplanation;
+
+    public String strMediaType;
+    public String strServiceVersion;
+    public String strTitle;
+
 
     public static TodayApodFragment newInstance(String name)
     {
@@ -101,11 +114,21 @@ public class TodayApodFragment extends Fragment {
                 tvTitle.setText(response.body().getTitle());
                 //tvUrl.setText(response.body().getUrl());
 
-
                 strUrl = response.body().getUrl();
 
 
                 Picasso.with(getActivity()).load(strUrl).into(ivImg);
+
+
+                /*PARA GUARDAR EN BD*/
+
+                strCopyright = response.body().getCopyright();
+                strDate = response.body().getDate();
+                strExplanation = response.body().getExplanation();
+
+                strMediaType = response.body().getMediaType();
+                strServiceVersion = response.body().getServiceVersion();
+                strTitle = response.body().getTitle();
 
             }
 
@@ -137,8 +160,12 @@ public class TodayApodFragment extends Fragment {
             case R.id.menuRedes_favorites:
 
                 //Agregar a favoritos a la base de datos
-                Snackbar.make(getView(), "Favorites", Snackbar.LENGTH_SHORT).show();
-                agregarFavoritos();
+                Snackbar.make(getView(), "Adding to favorites", Snackbar.LENGTH_SHORT).show();
+
+                OperacionesDatos db = new OperacionesDatos(getActivity());
+                agregarFavoritos(db);
+
+
 
             default:
                 return super.onOptionsItemSelected(item);
@@ -154,7 +181,17 @@ public class TodayApodFragment extends Fragment {
         startActivity(Intent.createChooser(shareIntent, "Compartir"));
     }
 
-    private void agregarFavoritos() {
+    private void agregarFavoritos(OperacionesDatos db) {
+        ContentValues contentValues = new ContentValues();
+        contentValues.put(ConstantesBD.COLUMNE_FAV_APOD_TITLE, strTitle);
+        contentValues.put(ConstantesBD.COLUMNE_FAV_APOD_COPYRIGHT, strCopyright);
+        contentValues.put(ConstantesBD.COLUMNE_FAV_APOD_DATE, strDate);
+        contentValues.put(ConstantesBD.COLUMNE_FAV_APOD_EXPLANATION, strExplanation);
+        contentValues.put(ConstantesBD.COLUMNE_FAV_APOD_MEDIATYPE, strMediaType);
+        contentValues.put(ConstantesBD.COLUMNE_FAV_APOD_SERVICEVERSION, strServiceVersion);
+        contentValues.put(ConstantesBD.COLUMNE_FAV_APOD_URL, strUrl);
+
+        db.insertarFavoriteAPOD(contentValues);
     }
 
 
