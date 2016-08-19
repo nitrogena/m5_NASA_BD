@@ -3,9 +3,11 @@
     xmlns:fresco="http://schemas.android.com/apk/res-auto"
     xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
-    android:layout_height="wrap_content"
+    android:layout_height="280dp"
+
+    xmlns:cardview="http://schemas.android.com/apk/res-auto"
     android:id="@+id/card_view"
-    >
+    cardview:cardCornerRadius="6dp">
 
 
 
@@ -37,6 +39,7 @@
         android:layout_height="250dp"
         android:id="@+id/alistcv_iv_img"
         android:layout_gravity="center_horizontal"
+
         fresco:actualImageScaleType="fitXY"/>
 
     <!--
@@ -51,7 +54,8 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_gravity="bottom|center"
-        android:text="Camera Full Name"/>
+        android:text="Camera Full Name"
+        android:textColorHighlight="@color/primary_text"/>
 
     <!--
     <TextView
