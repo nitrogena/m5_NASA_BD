@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">VISTA DEL UNIVERSO</string>
+    <string name="action_sign_in">Ingresar o registrarse</string>
+    <string name="action_sign_in_short">Ingresar</string>
+    <string name="amain_btn_ir">Mostrar lista</string>
+    <string name="date">Fecha:</string>
+    <string name="error_field_required">Este campo es obligatorio</string>
+    <string name="error_incorrect_password">La contraseña es incorrecta</string>
+    <string name="error_invalid_email">El correo electrónico no es válido</string>
+    <string name="error_invalid_password">La contraseña es demasiado corta</string>
+    <string name="explanation">Descripción</string>
+    <string name="mediatype">Formato:</string>
+    <string name="menuListFragment_share">Compartir</string>
+    <string name="menuRedes_favorites">Favoritos</string>
+    <string name="menuRedes_share">Compartir</string>
+    <string name="prompt_email">Correo electrónico</string>
+    <string name="prompt_password">Contraseña (opcional)</string>
+    <string name="serviceversion">Versión de servicio</string>
+    <string name="title">Título</string>
+    <string name="title_activity_login_fb">Ingresar</string>
+    <string name="adetail_btn_regresar">Regresar</string>
+    <string name="adetail_tv_cameraFullName">Nombre completo de la cámara</string>
+    <string name="adetail_tv_earthDate">Fecha de la Tierra:</string>
+    <string name="adetail_tv_roverLandingdate">Fecha de aterrizaje del explorador:</string>
+</resources>

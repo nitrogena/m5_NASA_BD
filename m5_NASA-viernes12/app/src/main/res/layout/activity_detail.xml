@@ -24,30 +24,30 @@
         android:id="@+id/adetail_tv_cameraFullName"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="camera fullName"/>
+        android:text="@string/adetail_tv_cameraFullName"/>
 
     <TextView
         android:id="@+id/adetail_tv_earthDate"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="earth date"/>
+        android:text="@string/adetail_tv_earthDate"/>
 
     <TextView
         android:id="@+id/adetail_tv_roverLandingdate"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="rover landing date"/>
+        android:text="@string/adetail_tv_roverLandingdate"/>
 
     <ImageView
         android:id="@+id/adetail_iv_img"
-        android:layout_width="250dp"
-        android:layout_height="250dp"
+        android:layout_width="@dimen/adetail_iv_img_width"
+        android:layout_height="@dimen/adetail_iv_img_height"
         android:src="@mipmap/ic_launcher"
         android:layout_gravity="center_horizontal"/>
     <Button
         android:id="@+id/adetail_btn_regresar"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Regresar"/>
+        android:text="@string/adetail_btn_regresar"/>
 
 </LinearLayout>

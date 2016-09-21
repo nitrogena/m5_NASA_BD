@@ -1,0 +1,63 @@
+apply plugin: 'com.android.application'
+
+android {
+    compileSdkVersion 23
+    buildToolsVersion "23.0.3"
+
+    defaultConfig {
+        applicationId "mx.nitrogena.dadm.mod5.nasa"
+        minSdkVersion 15
+        targetSdkVersion 23
+        versionCode 1
+        versionName "1.0"
+    }
+    buildTypes {
+        //EL OBJETO buildTypes TIENE DOS OBJETOS realese Y debug
+        //HAGO COMPILACION DEL TIPO RELEASE SE USA UN VALOR DIFRENTE AL DE COMPILACION CON DEBUG
+        release {
+            minifyEnabled false     //PARA HACER UN CODIGO MAS PEQUEÑO
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+            //PARA TENER VARIABLES PARA CADA buildTypes
+            buildConfigField "String", "BUILD_TYPE", "release"
+
+        }
+
+        debug {
+            minifyEnabled true
+
+            buildConfigField("String", "TIPO", "pruebas")
+        }
+    }
+
+    //PARA TENER UNA VERSION PREMIUM Y UNA FREE
+    //TENER DIFERENTES VERSIONES DEL MISMO PROYECTO CON productFlavors
+    //para cada product flavor debo tener una carpeta con la misma estructura que src/main
+    // (java, res y android manifest) que tendra clases especificas de esas versiones
+    productFlavors{
+        old_version{
+            applicationId "mx.nitrogena.dadm.mod5.old_version"
+            /*PUEDO COLOCAR Y CAMBIAR LO SIGUIENTE DEL DEFAULTCONFIG
+            * minSdkVersion 15
+        targetSdkVersion 23
+        versionCode 1
+        versionName "1.0"*/
+        }
+        actual_version{
+            applicationId "mx.nitrogena.dadm.mod5.actual_version"
+        }
+    }
+
+
+}
+
+dependencies {
+    //AGREGAMOS BIBLIOTECAS
+    //COMPILAR BIBLIOTECAS DENTRO DE libs
+    compile fileTree(dir: 'libs', include: ['*.jar'])
+    //PONEMOS BIBLIOTECAS PARA NUESTRA APLICACION
+    testCompile 'junit:junit:4.12'
+    //BIBLIOTECAS QUE SE DESCARGAN
+    compile 'com.android.support:appcompat-v7:23.4.0'
+    //PUEDO COMPILAR BIBLIOTECAS PARA CADA PRODUCT FLAVOR, EJEMPLO:
+    //old_versionCompile 'com.android.design.salaala'
+}

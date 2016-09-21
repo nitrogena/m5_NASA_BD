@@ -1,15 +1,15 @@
 <resources>
-    <string name="app_name">NASA</string>
+    <string name="app_name">UNIVERSE VIEW</string>
 
-    <string name="copyright">Copyright: </string>
-    <string name="date">date: </string>
+    <string name="copyright" translatable="false">Copyright: </string>
+    <string name="date">Date: </string>
     <string name="explanation">Explanation: </string>
-    <string name="hdurl">Hdurl: </string>
+    <string name="hdurl" translatable="false">Hdurl: </string>
     <string name="mediatype">Media Type: </string>
     <string name="serviceversion">Service Version: </string>
     <string name="title">Title: </string>
-    <string name="url">URL: </string>
-    <string name="amain_btn_ir">Mostrar lista</string>
+    <string name="url" translatable="false">URL: </string>
+    <string name="amain_btn_ir">Show list</string>
 
     <string name="facebook_app_id">297876327242282</string>
     <string name="title_activity_login_fb">Sign in</string>
@@ -29,6 +29,16 @@
     <string name="menuListFragment_share">Share</string>
     <string name="menuRedes_share">Share</string>
     <string name="menuRedes_favorites">Favorites</string>
+
+    <!-- activity detail-->
+
+    <string name="adetail_tv_cameraFullName">Camera full name: </string>
+    <string name="adetail_tv_earthDate">Earth date: </string>
+    <string name="adetail_tv_roverLandingdate">Rover landing date: </string>
+    <string name="adetail_btn_regresar">Return</string>
+
+
+
 
 
 </resources>
