@@ -36,7 +36,7 @@
 
     <com.facebook.drawee.view.SimpleDraweeView
         android:layout_width="match_parent"
-        android:layout_height="250dp"
+        android:layout_height="@dimen/alistcv_iv_img_height"
         android:id="@+id/alistcv_iv_img"
         android:layout_gravity="center_horizontal"
 
@@ -55,7 +55,8 @@
         android:layout_height="wrap_content"
         android:layout_gravity="bottom|center"
         android:text="@string/adetail_tv_cameraFullName"
-        android:textColorHighlight="@color/primary_text"/>
+        android:textColorHighlight="@color/primary_text"
+        android:textStyle="bold"/>
 
     <!--
     <TextView

@@ -13,7 +13,9 @@
 
     <dimen name="amain_iv_img_height">350dp</dimen>
 
+
     <dimen name="toolbar_layout_height">1dp</dimen>
     <dimen name="padding_top">15dp</dimen>
 
+    <dimen name="alistcv_iv_img_height">250dp</dimen>
 </resources>
