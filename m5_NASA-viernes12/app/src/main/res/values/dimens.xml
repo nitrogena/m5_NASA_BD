@@ -7,5 +7,10 @@
     <dimen name="adetail_iv_img_width">250dp</dimen>
     <dimen name="adetail_iv_img_height">250dp</dimen>
 
+    <dimen name="alistcv_cardview_layout_height">280dp</dimen>
+    <dimen name="alistcv_cardview_cardCornerRadius">6dp</dimen>
+
+
+    <dimen name="amain_iv_img_height">350dp</dimen>
 
 </resources>

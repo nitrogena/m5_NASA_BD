@@ -20,7 +20,7 @@
     <string name="title">Título</string>
     <string name="title_activity_login_fb">Ingresar</string>
     <string name="adetail_btn_regresar">Regresar</string>
-    <string name="adetail_tv_cameraFullName">Nombre completo de la cámara</string>
+    <string name="adetail_tv_cameraFullName">Nombre completo de la cámara:</string>
     <string name="adetail_tv_earthDate">Fecha de la Tierra:</string>
     <string name="adetail_tv_roverLandingdate">Fecha de aterrizaje del explorador:</string>
 </resources>

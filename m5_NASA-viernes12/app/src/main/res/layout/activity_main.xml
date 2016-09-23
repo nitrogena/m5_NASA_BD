@@ -20,69 +20,127 @@
         android:id="@+id/toolbar"
         android:minHeight="?attr/actionBarSize"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_height="1dp"
         app:titleTextColor="@android:color/white"
         android:background="?attr/colorPrimary">
     </android.support.v7.widget.Toolbar>
 
 
-
-    <ImageView
-        android:id="@+id/amain_iv_img"
+    <LinearLayout
+        android:orientation="vertical"
         android:layout_width="match_parent"
-        android:layout_height="350dp"
-        tools:src="@mipmap/ic_launcher"
-        android:scaleType="fitXY"/>
-    <TextView
-        android:id="@+id/amain_tv_title"
-        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="@string/title"
-        />
+        android:layout_weight=".7">
+        <ImageView
+            android:id="@+id/amain_iv_img"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            tools:src="@mipmap/ic_launcher"
+            android:scaleType="fitXY"
 
-    <TextView
-        android:id="@+id/amain_tv_date"
-        android:layout_width="wrap_content"
+            />
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="@string/date" />
-    <TextView
-        android:id="@+id/amain_tv_explanation"
-        android:layout_width="wrap_content"
+        android:layout_weight=".3"
+        android:orientation="vertical"
+        >
+
+        <TextView
+            android:id="@+id/amain_tv_title"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/title"
+            android:textStyle="bold"
+            />
+
+        <LinearLayout
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="@string/explanation" />
-    <!--<TextView
-        android:id="@+id/amain_tv_hdurl"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Hello World!" />-->
-    <TextView
-        android:id="@+id/amain_tv_mediaType"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="@string/mediatype" />
-    <TextView
-        android:id="@+id/amain_tv_serviceVersion"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="@string/serviceversion" />
-    <TextView
-        android:id="@+id/amain_tv_copyright"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="@string/copyright" />
+            android:paddingTop="15dp"
+
+            android:orientation="horizontal">
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textStyle="italic"
+            android:text="@string/date"/>
+        <TextView
+            android:id="@+id/amain_tv_date"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/date"
+            />
 
 
-    <!--<TextView
-        android:id="@+id/amain_tv_url"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Hello World!" />-->
-    <Button
-        android:id="@+id/amain_btn_ir"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="@string/amain_btn_ir"/>
+        </LinearLayout>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
 
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textStyle="italic"
+                android:text="@string/copyright"/>
+            <TextView
+                android:id="@+id/amain_tv_copyright"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/copyright"
+                />
+
+        </LinearLayout>
+        <TextView
+            android:id="@+id/amain_tv_explanation"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:paddingTop="15dp"
+            android:text="@string/explanation"
+            />
+        <!--<TextView
+            android:id="@+id/amain_tv_hdurl"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Hello World!" />-->
+        <TextView
+            android:id="@+id/amain_tv_mediaType"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/mediatype"
+            android:visibility="invisible"
+            />
+
+        <TextView
+            android:id="@+id/amain_tv_serviceVersion"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/serviceversion"
+            android:visibility="invisible"
+            />
+
+
+
+        <!--<TextView
+            android:id="@+id/amain_tv_url"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Hello World!" />-->
+        <Button
+            android:id="@+id/amain_btn_ir"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/amain_btn_ir"
+            android:textAllCaps="false"
+            android:visibility="invisible"
+            />
+
+
+
+    </LinearLayout>
 
 
 </LinearLayout>
