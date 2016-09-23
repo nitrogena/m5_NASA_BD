@@ -84,12 +84,16 @@ public class DetailActivity extends AppCompatActivity  implements View.OnClickLi
 
 
 /**/
-        tvCameraFullName.setText("camera full name: "+cameraFullname);
-        tvEarthDate.setText("earth date: " + earthDate);
+        //tvCameraFullName.setText("camera full name: "+cameraFullname);
+        //tvEarthDate.setText("earth date: " + earthDate);
+
+        tvCameraFullName.setText(cameraFullname);
+        tvEarthDate.setText(earthDate);
 
         Picasso.with(DetailActivity.this).load(imgSrc).into(ivImg);
 
-        tvRoverLandingdate.setText("rover landing date: " + roverLandingdate);
+        //tvRoverLandingdate.setText("rover landing date: " + roverLandingdate);
+        tvRoverLandingdate.setText(roverLandingdate);
 
         findViewById(R.id.adetail_btn_regresar).setOnClickListener(this);
 

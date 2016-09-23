@@ -20,24 +20,53 @@
         android:background="?attr/colorPrimary">
     </android.support.v7.widget.Toolbar>
 
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:paddingTop="@dimen/padding_top">
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textStyle="italic"
+            android:text="@string/adetail_tv_cameraFullName"/>
     <TextView
         android:id="@+id/adetail_tv_cameraFullName"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="@string/adetail_tv_cameraFullName"/>
+    </LinearLayout>
 
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/adetail_tv_earthDate"
+            android:textStyle="italic"/>
     <TextView
         android:id="@+id/adetail_tv_earthDate"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="@string/adetail_tv_earthDate"/>
-
+    </LinearLayout>
+    <LinearLayout
+        android:orientation="horizontal"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content">
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/adetail_tv_roverLandingdate"
+            android:textStyle="italic"/>
     <TextView
         android:id="@+id/adetail_tv_roverLandingdate"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="@string/adetail_tv_roverLandingdate"/>
-
+    </LinearLayout>
     <ImageView
         android:id="@+id/adetail_iv_img"
         android:layout_width="@dimen/adetail_iv_img_width"
@@ -48,6 +77,7 @@
         android:id="@+id/adetail_btn_regresar"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:textAllCaps="false"
         android:text="@string/adetail_btn_regresar"/>
 
 </LinearLayout>
