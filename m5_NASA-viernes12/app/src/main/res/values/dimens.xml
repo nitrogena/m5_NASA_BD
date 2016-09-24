@@ -18,4 +18,9 @@
     <dimen name="padding_top">15dp</dimen>
 
     <dimen name="alistcv_iv_img_height">250dp</dimen>
+
+    <dimen name="fitemlist_favoritemr_layout_margin">5dp</dimen>
+
+    <dimen name="fitemlist_favoritemr_tituloSize">18sp</dimen>
+    <dimen name="fitemlist_favoritemr_txtSize">15sp</dimen>
 </resources>

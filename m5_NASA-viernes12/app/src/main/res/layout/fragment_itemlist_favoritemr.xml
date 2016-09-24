@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:fresco="http://schemas.android.com/apk/res-auto"
-    android:orientation="vertical"
+    android:orientation="horizontal"
     android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    android:layout_height="wrap_content">
 
     <!--
     <com.facebook.drawee.view.SimpleDraweeView
@@ -16,41 +16,65 @@
 
 
     <LinearLayout
-        android:layout_weight="0.7"
+        android:orientation="horizontal"
+        android:layout_weight="0.6"
+        android:layout_margin="@dimen/fitemlist_favoritemr_layout_margin"
         android:layout_width="match_parent"
         android:layout_height="match_parent">
         <ImageView
             android:id="@+id/fitemlist_favoritemr_iv_img"
-            android:layout_margin="@dimen/margin_l"
-            android:layout_width="56dp"
-            android:layout_height="56dp" />
+
+            android:layout_width="match_parent"
+            android:layout_height="match_parent" />
 
     </LinearLayout>
 
     <LinearLayout
-        android:layout_weight="0.3"
+        android:layout_weight="0.4"
+        android:layout_margin="@dimen/fitemlist_favoritemr_layout_margin"
         android:orientation="vertical"
         android:layout_width="match_parent"
         android:layout_height="wrap_content">
         <TextView
             android:layout_weight="1"
-            android:textSize="18sp"
+            android:textSize="@dimen/fitemlist_favoritemr_tituloSize"
             android:textStyle="bold"
             android:id="@+id/fitemlist_favoritemr_tv_camera_fullName"
             android:layout_width="match_parent"
             android:layout_height="match_parent" />
-        <TextView
-            android:textSize="15sp"
+        <LinearLayout
             android:layout_weight="1"
+            android:orientation="horizontal"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textStyle="italic"
+            android:text="@string/adetail_tv_earthDate"/>
+        <TextView
+            android:textSize="@dimen/fitemlist_favoritemr_txtSize"
+
             android:id="@+id/fitemlist_favoritemr_tv_earthDate"
             android:layout_width="match_parent"
             android:layout_height="match_parent" />
-        <TextView
-            android:textSize="15sp"
+        </LinearLayout>
+        <LinearLayout
+            android:orientation="horizontal"
             android:layout_weight="1"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+            <TextView
+                android:layout_width="wrap_content"
+                android:textStyle="italic"
+                android:layout_height="wrap_content"
+                android:text="@string/adetail_tv_roverLandingdate"/>
+        <TextView
+            android:textSize="@dimen/fitemlist_favoritemr_txtSize"
             android:id="@+id/fitemlist_favoritemr_tv_roverLanding"
             android:layout_width="match_parent"
             android:layout_height="match_parent" />
+        </LinearLayout>
 
     </LinearLayout>
 
