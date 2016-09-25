@@ -12,6 +12,8 @@ import com.squareup.picasso.Picasso;
 
 import java.util.List;
 
+import butterknife.BindView;
+import butterknife.ButterKnife;
 import mx.nitrogena.dadm.mod5.nasa.R;
 import mx.nitrogena.dadm.mod5.nasa.model.FavoriteMarsRoverModel;
 
@@ -20,8 +22,15 @@ import mx.nitrogena.dadm.mod5.nasa.model.FavoriteMarsRoverModel;
  */
 public class FavoriteAdapter extends ArrayAdapter<FavoriteMarsRoverModel>{
 
+    //se agregaron el 24 sept
+    @BindView(R.id.fitemlist_favoritemr_tv_earthDate) TextView tvEarthDate;
+    @BindView(R.id.fitemlist_favoritemr_tv_camera_fullName) TextView tvCameraFullName;
+    @BindView(R.id.fitemlist_favoritemr_iv_img) ImageView img;
+    @BindView(R.id.fitemlist_favoritemr_tv_roverLanding) TextView tvRoverLanding;
+
     public FavoriteAdapter(Context context, List<FavoriteMarsRoverModel> objects) {
         super(context, 0, objects);
+
 
     }
 
@@ -31,10 +40,15 @@ public class FavoriteAdapter extends ArrayAdapter<FavoriteMarsRoverModel>{
         {
             convertView = LayoutInflater.from(parent.getContext()).inflate(R.layout.fragment_itemlist_favoritemr, parent, false);
         }
-        TextView tvEarthDate = (TextView) convertView.findViewById(R.id.fitemlist_favoritemr_tv_earthDate);
-        TextView tvCameraFullName = (TextView) convertView.findViewById(R.id.fitemlist_favoritemr_tv_camera_fullName);
-        ImageView img = (ImageView) convertView.findViewById(R.id.fitemlist_favoritemr_iv_img);
-        TextView tvRoverLanding = (TextView) convertView.findViewById(R.id.fitemlist_favoritemr_tv_roverLanding);
+        //se agregaron el 24 sept
+        ButterKnife.bind(this, convertView);
+
+        //se quitaron el 24 sept
+
+        //TextView tvEarthDate = (TextView) convertView.findViewById(R.id.fitemlist_favoritemr_tv_earthDate);
+        //TextView tvCameraFullName = (TextView) convertView.findViewById(R.id.fitemlist_favoritemr_tv_camera_fullName);
+        //ImageView img = (ImageView) convertView.findViewById(R.id.fitemlist_favoritemr_iv_img);
+        //TextView tvRoverLanding = (TextView) convertView.findViewById(R.id.fitemlist_favoritemr_tv_roverLanding);
 
         FavoriteMarsRoverModel modelItem = getItem(position);
 

@@ -4,16 +4,16 @@
         <item android:id="@+id/menuuno_opcionUno"
             android:checkable="false"
             android:icon="@drawable/bright_moon_48"
-            android:title="Today APOD"></item>
+            android:title="@string/todayAPOD"></item>
         <item android:id="@+id/menuuno_opcionDos"
             android:checkable="false"
             android:icon="@drawable/rocket_48"
-            android:title="Mars Rovers Images"
+            android:title="@string/marsRoverImages"
             ></item>
         <item android:id="@+id/menuuno_opcionTres"
             android:checkable="false"
             android:icon="@drawable/star_48"
-            android:title="Favorites"
+            android:title="@string/menuRedes_favorites"
 
             ></item>
 

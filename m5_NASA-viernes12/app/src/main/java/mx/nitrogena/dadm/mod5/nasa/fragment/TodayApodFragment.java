@@ -146,21 +146,26 @@ public class TodayApodFragment extends Fragment {
     @Override
     public void onCreateOptionsMenu(Menu menu, MenuInflater inflater){
         inflater.inflate(R.menu.menu_redes, menu);
+        //inflater.inflate(R.menu.menu_list_fragment, menu);
         super.onCreateOptionsMenu(menu, inflater);
     }
 
     public boolean onOptionsItemSelected(MenuItem item) {
         switch (item.getItemId()) {
             case R.id.menuRedes_share_today_apod:
+            //case R.id.menuListFragment_share_today_apod:
                 //Toast.makeText(getActivity(), "Hola", Toast.LENGTH_LONG ).show();
                 //Snackbar.make(getView(), "Share", Snackbar.LENGTH_SHORT).show();
 
-                shareText("APP: " + strUrl);
+                //shareText("APOD: " + strUrl);
+                shareText(getString(R.string.apod) + strUrl);
                 return true;
+
             case R.id.menuRedes_favorites:
 
                 //Agregar a favoritos a la base de datos
-                Snackbar.make(getView(), "Adding to favorites", Snackbar.LENGTH_SHORT).show();
+                //Snackbar.make(getView(), "Adding to favorites", Snackbar.LENGTH_SHORT).show();
+                Snackbar.make(getView(), R.string.addFavorites, Snackbar.LENGTH_SHORT).show();
 
                 OperacionesDatos db = new OperacionesDatos(getActivity());
                 agregarFavoritos(db);
@@ -178,7 +183,8 @@ public class TodayApodFragment extends Fragment {
         Intent shareIntent = new Intent(Intent.ACTION_SEND);
         shareIntent.setType("text/plain");
         shareIntent.putExtra(Intent.EXTRA_TEXT, text);
-        startActivity(Intent.createChooser(shareIntent, "Compartir"));
+        //startActivity(Intent.createChooser(shareIntent, "Compartir"));
+        startActivity(Intent.createChooser(shareIntent, getString(R.string.compartir)));
     }
 
     private void agregarFavoritos(OperacionesDatos db) {

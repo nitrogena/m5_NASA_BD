@@ -3,10 +3,12 @@
     xmlns:app="http://schemas.android.com/apk/res-auto">
     <item
         android:id="@+id/menuListFragment_share_today_apod"
-        android:icon="@drawable/share_48"
-        android:title="@string/menuListFragment_share"
+        android:icon="@drawable/refresh_48"
+        android:title="@string/menuListFragment_refresh"
         android:showAsAction="always"
         app:showAsAction="always">
 
     </item>
+
+
 </menu>

@@ -23,5 +23,12 @@
     <string name="adetail_tv_cameraFullName">Nombre completo de la cámara:</string>
     <string name="adetail_tv_earthDate">Fecha de la Tierra:</string>
     <string name="adetail_tv_roverLandingdate">Fecha de aterrizaje del explorador:</string>
-    <string name="flist_favoritemr_titulo">Mars rovers favorites</string>
+    <string name="flist_favoritemr_titulo">Imágenes favoritas de Marte</string>
+    <string name="todayAPOD">Fotografía astrónomica de hoy</string>
+    <string name="marsRoverImages">Imágenes de Marte</string>
+    <string name="url" translatable="false"></string>
+    <string name="compartir">Share</string>
+    <string name="addFavorites">Adding to favorites</string>
+    <string name="apod">APOD:</string>
+    <string name="menuListFragment_refresh">Refresh</string>
 </resources>

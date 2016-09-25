@@ -37,6 +37,7 @@
     <com.facebook.drawee.view.SimpleDraweeView
         android:layout_width="match_parent"
         android:layout_height="@dimen/alistcv_iv_img_height"
+        android:padding="@dimen/margin_l"
         android:id="@+id/alistcv_iv_img"
         android:layout_gravity="center_horizontal"
 

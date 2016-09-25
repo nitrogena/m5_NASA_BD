@@ -25,16 +25,17 @@
         android:layout_height="wrap_content"
         android:orientation="horizontal"
         android:paddingTop="@dimen/padding_top">
-        <TextView
+        <!--<TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:textStyle="italic"
-            android:text="@string/adetail_tv_cameraFullName"/>
+            android:text="@string/adetail_tv_cameraFullName"/>-->
     <TextView
         android:id="@+id/adetail_tv_cameraFullName"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="@string/adetail_tv_cameraFullName"/>
+        android:text="@string/adetail_tv_cameraFullName"
+        android:textSize="@dimen/fitemlist_favoritemr_tituloSize"/>
     </LinearLayout>
 
     <LinearLayout

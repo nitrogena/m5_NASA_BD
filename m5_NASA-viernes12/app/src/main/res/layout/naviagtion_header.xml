@@ -24,6 +24,6 @@
         android:textSize="@dimen/fitemlist_favoritemr_tituloSize"
         android:layout_marginLeft="15dp"
         android:layout_marginBottom="15dp"
-        android:textColor="@color/colorAccent"/>
+        android:textColor="@color/icons"/>
 
 </LinearLayout>

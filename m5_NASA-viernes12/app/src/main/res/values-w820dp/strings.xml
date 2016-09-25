@@ -1,4 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <string name="flist_favoritemr_titulo">Mars rovers favorites</string>
+    <string name="todayAPOD">Astronomy Picture of the Day</string>
+    <string name="marsRoverImages">Mars Rovers Images</string>
+    <string name="compartir">Share</string>
+    <string name="addFavorites">Adding to favorites</string>
+    <string name="apod">APOD:</string>
+    <string name="menuListFragment_refresh">Refresh</string>
 </resources>

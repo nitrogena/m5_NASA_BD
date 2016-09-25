@@ -111,14 +111,6 @@ public class ListFragment extends Fragment {
             }
         });
 
-
-
-
-
-
-
-
-
         return view;
     }
 
@@ -131,9 +123,11 @@ public class ListFragment extends Fragment {
     public boolean onOptionsItemSelected(MenuItem item) {
         switch (item.getItemId()) {
             case R.id.menuListFragment_share_today_apod:
+                //EN REALIDAD ES UN REFRESH,
+
                 //Toast.makeText(getActivity(), "Hola", Toast.LENGTH_LONG ).show();
 
-                Snackbar.make(getView(), "SHARE LIST", Snackbar.LENGTH_SHORT).show();
+                Snackbar.make(getView(), "REFRESH", Snackbar.LENGTH_SHORT).show();
 
 
                 return true;

@@ -97,7 +97,7 @@ public class ListFavoriteMRFragment extends Fragment{
             case R.id.menuListFragment_share_today_apod:
                 //Toast.makeText(getActivity(), "Hola", Toast.LENGTH_LONG ).show();
 
-                Snackbar.make(getView(), "SHARE LIST", Snackbar.LENGTH_SHORT).show();
+                Snackbar.make(getView(), "REFRESH", Snackbar.LENGTH_SHORT).show();
 
 
                 return true;
