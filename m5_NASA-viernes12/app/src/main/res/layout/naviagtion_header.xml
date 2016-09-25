@@ -2,7 +2,7 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
 
     android:orientation="vertical" android:layout_width="match_parent"
-    android:layout_height="300dp"
+    android:layout_height="wrap_content"
     android:background="@color/colorPrimaryDark"
     >
 
@@ -19,6 +19,11 @@
         android:id="@+id/user_name"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="USER_NAME"/>
+        android:text="USER_NAME"
+        android:textStyle="bold"
+        android:textSize="@dimen/fitemlist_favoritemr_tituloSize"
+        android:layout_marginLeft="15dp"
+        android:layout_marginBottom="15dp"
+        android:textColor="@color/colorAccent"/>
 
 </LinearLayout>

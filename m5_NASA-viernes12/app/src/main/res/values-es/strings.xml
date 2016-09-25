@@ -23,4 +23,5 @@
     <string name="adetail_tv_cameraFullName">Nombre completo de la cámara:</string>
     <string name="adetail_tv_earthDate">Fecha de la Tierra:</string>
     <string name="adetail_tv_roverLandingdate">Fecha de aterrizaje del explorador:</string>
+    <string name="flist_favoritemr_titulo">Mars rovers favorites</string>
 </resources>

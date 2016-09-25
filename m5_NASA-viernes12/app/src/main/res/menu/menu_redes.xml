@@ -3,7 +3,7 @@
     xmlns:app="http://schemas.android.com/apk/res-auto">
     <item
         android:id="@+id/menuRedes_share_today_apod"
-        android:icon="@android:drawable/ic_menu_share"
+        android:icon="@drawable/share_48"
         android:title="@string/menuRedes_share"
         android:showAsAction="always"
         app:showAsAction="always">
@@ -12,7 +12,7 @@
 
     <item
         android:id="@+id/menuRedes_favorites"
-        android:icon="@android:drawable/ic_menu_preferences"
+        android:icon="@drawable/star_48"
         android:title="@string/menuRedes_favorites"
         android:showAsAction="always"
         app:showAsAction="always">

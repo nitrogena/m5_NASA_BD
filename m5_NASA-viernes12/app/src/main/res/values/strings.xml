@@ -36,9 +36,7 @@
     <string name="adetail_tv_earthDate">Earth date: </string>
     <string name="adetail_tv_roverLandingdate">Rover landing date: </string>
     <string name="adetail_btn_regresar">Return</string>
-
-
-
+    <string name="flist_favoritemr_titulo">Mars rovers favorites</string>
 
 
 </resources>
