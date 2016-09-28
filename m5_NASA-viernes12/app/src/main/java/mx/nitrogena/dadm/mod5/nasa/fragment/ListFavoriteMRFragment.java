@@ -19,6 +19,7 @@ import java.util.ArrayList;
 import butterknife.BindView;
 import butterknife.ButterKnife;
 import mx.nitrogena.dadm.mod5.nasa.Adapter.FavoriteAdapter;
+import mx.nitrogena.dadm.mod5.nasa.Adapter.FavoriteRMAdapter;
 import mx.nitrogena.dadm.mod5.nasa.R;
 import mx.nitrogena.dadm.mod5.nasa.model.FavoriteMarsRoverModel;
 import mx.nitrogena.dadm.mod5.nasa.sql.OperacionesDatos;
@@ -32,10 +33,10 @@ public class ListFavoriteMRFragment extends Fragment{
 
     //private ListView listView;
 
-   /*@BindView(R.id.nasaapodlayout_rv_recyclerv)
-    RecyclerView marsRoverListRecycler;*/
+   @BindView(R.id.rvFavoriteMR)
+    RecyclerView marsRoverListRecycler;
 
-    @BindView (R.id.listFavoriteMR) ListView listView;
+    //@BindView (R.id.listFavoriteMR) ListView listView;
 
 
     public static ListFavoriteMRFragment newInstance(String name)
@@ -51,7 +52,7 @@ public class ListFavoriteMRFragment extends Fragment{
         super.onCreate(saveInstanceState);
         operacionesDatos = new OperacionesDatos(getActivity());
 
-                setHasOptionsMenu(true);
+        setHasOptionsMenu(true);
     }
 
     @Nullable
@@ -68,13 +69,16 @@ public class ListFavoriteMRFragment extends Fragment{
 
 
 
-        //LinearLayoutManager linearLayoutManager = new LinearLayoutManager(getActivity());
-        //marsRoverListRecycler.setLayoutManager(linearLayoutManager);
+        LinearLayoutManager linearLayoutManager = new LinearLayoutManager(getActivity());
+        marsRoverListRecycler.setLayoutManager(linearLayoutManager);
 
 
         ArrayList<FavoriteMarsRoverModel> arrLstFavMr = operacionesDatos.obtenerFavoritosMR();
 
-        listView.setAdapter(new FavoriteAdapter(getActivity(), arrLstFavMr));
+        //listView.setAdapter(new FavoriteAdapter(getActivity(), arrLstFavMr));
+
+        marsRoverListRecycler.setAdapter(new FavoriteRMAdapter(arrLstFavMr));
+
 
         //nasaApodAdapter.setMarsPhotos(arrLstFavMr);
         //marsRoverListRecycler.setAdapter(nasaApodAdapter);

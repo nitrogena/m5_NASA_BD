@@ -1,6 +1,7 @@
 package mx.nitrogena.dadm.mod5.nasa.Adapter;
 
 import android.content.Context;
+import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -21,6 +22,7 @@ import mx.nitrogena.dadm.mod5.nasa.model.FavoriteMarsRoverModel;
  * Created by USUARIO on 19/08/2016.
  */
 public class FavoriteAdapter extends ArrayAdapter<FavoriteMarsRoverModel>{
+
 
     //se agregaron el 24 sept
     @BindView(R.id.fitemlist_favoritemr_tv_earthDate) TextView tvEarthDate;
@@ -59,4 +61,5 @@ public class FavoriteAdapter extends ArrayAdapter<FavoriteMarsRoverModel>{
         tvRoverLanding.setText(modelItem.roverLandingDate);
         return convertView;
     }
+
 }

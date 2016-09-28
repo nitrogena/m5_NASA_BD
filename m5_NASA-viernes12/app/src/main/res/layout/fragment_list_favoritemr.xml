@@ -10,9 +10,17 @@
         android:text="@string/flist_favoritemr_titulo"
         android:layout_gravity="center_horizontal"/>
 
-    <ListView
+    <!--<ListView
         android:id="@+id/listFavoriteMR"
         android:layout_width="match_parent"
         android:layout_height="match_parent"/>
+-->
 
+    <android.support.v7.widget.RecyclerView
+        android:id="@+id/rvFavoriteMR"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+
+    </android.support.v7.widget.RecyclerView>
 </LinearLayout>
