@@ -90,7 +90,7 @@ public class ListActivity extends AppCompatActivity {
         }
 
 */
-
+        //AQUI SE DEBE COLOCAR ALGO PARA QUE SEPA QUE VIENE DE DETAIL
 
         replaceFragment(TodayApodFragment.newInstance("name"));
 

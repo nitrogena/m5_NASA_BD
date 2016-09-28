@@ -59,6 +59,9 @@ public class DetailActivity extends AppCompatActivity  implements View.OnClickLi
         // Make sure the toolbar exists in the activity and is not null
         setSupportActionBar(toolbar);
 
+        //BOTON SUBIR
+        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+
         Bundle bdlExtras = getIntent().getExtras();
         /*
         String cameraFullname = bdlExtras.getString("cameraFullname");

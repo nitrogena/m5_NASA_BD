@@ -20,7 +20,18 @@
         <activity android:name=".ListActivity">
 
         </activity>
-        <activity android:name=".DetailActivity" />
+
+
+        <activity android:name=".DetailActivity"
+            android:parentActivityName=".ListActivity">
+            <!--PARA EL BOTON SUBIR-->
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value=".ListActivity">
+
+            </meta-data>
+        </activity>
+
 
         <meta-data
             android:name="com.facebook.sdk.ApplicationId"

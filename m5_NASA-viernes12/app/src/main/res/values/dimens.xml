@@ -23,4 +23,5 @@
 
     <dimen name="fitemlist_favoritemr_tituloSize">18sp</dimen>
     <dimen name="fitemlist_favoritemr_txtSize">15sp</dimen>
+    <dimen name="elevacionToolBar">4dp</dimen>
 </resources>

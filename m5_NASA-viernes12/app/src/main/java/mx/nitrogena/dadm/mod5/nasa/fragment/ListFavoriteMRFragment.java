@@ -59,15 +59,8 @@ public class ListFavoriteMRFragment extends Fragment{
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
         View view = inflater.inflate(R.layout.fragment_list_favoritemr, container, false);
-        //View view = inflater.inflate(R.layout.nasa_apod_layout, container, false);
-
-
-
-
 
         ButterKnife.bind(this, view);
-
-
 
         LinearLayoutManager linearLayoutManager = new LinearLayoutManager(getActivity());
         marsRoverListRecycler.setLayoutManager(linearLayoutManager);
@@ -77,11 +70,8 @@ public class ListFavoriteMRFragment extends Fragment{
 
         //listView.setAdapter(new FavoriteAdapter(getActivity(), arrLstFavMr));
 
-        marsRoverListRecycler.setAdapter(new FavoriteRMAdapter(arrLstFavMr));
+        marsRoverListRecycler.setAdapter(new FavoriteRMAdapter(arrLstFavMr, getActivity()));
 
-
-        //nasaApodAdapter.setMarsPhotos(arrLstFavMr);
-        //marsRoverListRecycler.setAdapter(nasaApodAdapter);
 
         return view;
 

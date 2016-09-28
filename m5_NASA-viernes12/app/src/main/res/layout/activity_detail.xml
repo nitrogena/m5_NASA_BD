@@ -1,4 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
+
+
+
+
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
@@ -11,13 +15,16 @@
 
 
 
+
+
     <android.support.v7.widget.Toolbar
         android:id="@+id/toolbar"
         android:minHeight="?attr/actionBarSize"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         app:titleTextColor="@android:color/white"
-        android:background="?attr/colorPrimary">
+        android:background="?attr/colorPrimary"
+        android:elevation="@dimen/elevacionToolBar">
     </android.support.v7.widget.Toolbar>
 
     <LinearLayout
@@ -80,5 +87,7 @@
         android:layout_height="wrap_content"
         android:textAllCaps="false"
         android:text="@string/adetail_btn_regresar"/>
+
+
 
 </LinearLayout>
