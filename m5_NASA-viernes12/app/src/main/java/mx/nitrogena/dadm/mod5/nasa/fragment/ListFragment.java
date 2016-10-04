@@ -37,6 +37,8 @@ public class ListFragment extends Fragment {
     @BindView(R.id.nasaapodlayout_rv_recyclerv)
     RecyclerView marsRoverListRecycler;
 
+    private Menu optionsMenu;
+
     public static ListFragment newInstance(String name)
     {
         ListFragment f = new ListFragment();
@@ -116,6 +118,9 @@ public class ListFragment extends Fragment {
 
     @Override
     public void onCreateOptionsMenu(Menu menu, MenuInflater inflater){
+
+        this.optionsMenu = menu;
+
         inflater.inflate(R.menu.menu_list_fragment, menu);
         super.onCreateOptionsMenu(menu, inflater);
     }
@@ -126,9 +131,9 @@ public class ListFragment extends Fragment {
                 //EN REALIDAD ES UN REFRESH,
 
                 //Toast.makeText(getActivity(), "Hola", Toast.LENGTH_LONG ).show();
-
+                setRefreshActionButtonState(true);
                 Snackbar.make(getView(), "REFRESH", Snackbar.LENGTH_SHORT).show();
-
+                //setRefreshActionButtonState(false);
 
                 return true;
 
@@ -137,5 +142,18 @@ public class ListFragment extends Fragment {
                 return super.onOptionsItemSelected(item);
         }
 
+    }
+
+    public void setRefreshActionButtonState(final boolean refreshing) {
+        if (optionsMenu != null) {
+            final MenuItem refreshItem = optionsMenu.findItem(R.id.menuListFragment_share_today_apod);
+            if (refreshItem != null) {
+                if (refreshing) {
+                    refreshItem.setActionView(R.layout.actionbar_indeterminate_progress);
+                } else {
+                    refreshItem.setActionView(null);
+                }
+            }
+        }
     }
 }

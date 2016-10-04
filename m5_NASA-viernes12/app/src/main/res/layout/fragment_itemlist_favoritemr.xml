@@ -89,7 +89,7 @@
             android:textSize="@dimen/fitemlist_favoritemr_txtSize"
             android:id="@+id/fitemlist_favoritemr_tv_roverLanding"
             android:layout_width="match_parent"
-            android:layout_height="match_parent" />
+            android:layout_height="wrap_content" />
         </LinearLayout>
 
     </LinearLayout>

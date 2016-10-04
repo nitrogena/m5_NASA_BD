@@ -13,9 +13,16 @@
         <item android:id="@+id/menuuno_opcionTres"
             android:checkable="false"
             android:icon="@drawable/star_48"
-            android:title="@string/menuRedes_favorites"
+            android:title="@string/menuRedes_favoritesMR"
 
             ></item>
+        <item android:id="@+id/menuuno_opcionCuatro"
+            android:checkable="false"
+            android:icon="@drawable/star_48"
+            android:title="@string/menuRedes_favoritesAPOD"
+
+            ></item>
+
 
     </group>
 

@@ -116,9 +116,13 @@ public class TodayApodFragment extends Fragment {
 
                 strUrl = response.body().getUrl();
 
-
-                Picasso.with(getActivity()).load(strUrl).into(ivImg);
-
+                if (response.body().getMediaType() == "image") {
+                    Picasso.with(getActivity()).load(strUrl).into(ivImg);
+                }
+                else{
+                    ivImg.setImageResource(R.drawable.bright_moon_48);
+                    //ivImg.setImageResource(R.mipmap.ic_launcher);
+                }
 
                 /*PARA GUARDAR EN BD*/
 

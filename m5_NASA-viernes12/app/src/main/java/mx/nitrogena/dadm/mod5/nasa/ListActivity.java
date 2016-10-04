@@ -30,6 +30,7 @@ import java.security.NoSuchAlgorithmException;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;
+import mx.nitrogena.dadm.mod5.nasa.fragment.ListFavoriteApodFragment;
 import mx.nitrogena.dadm.mod5.nasa.fragment.ListFavoriteMRFragment;
 import mx.nitrogena.dadm.mod5.nasa.fragment.ListFragment;
 import mx.nitrogena.dadm.mod5.nasa.fragment.TodayApodFragment;
@@ -116,6 +117,11 @@ public class ListActivity extends AppCompatActivity {
                     case R.id.menuuno_opcionTres:
                         //Snackbar.make(findViewById(android.R.id.content), "Opcion tres", Snackbar.LENGTH_SHORT).show();
                         replaceFragmento(ListFavoriteMRFragment.newInstance("names"));
+                        return true;
+
+                    case R.id.menuuno_opcionCuatro:
+                        //Snackbar.make(findViewById(android.R.id.content), "Opcion tres", Snackbar.LENGTH_SHORT).show();
+                        replaceFragmentos(ListFavoriteApodFragment.newInstance("names"));
                         return true;
 
                 }
@@ -212,6 +218,11 @@ public class ListActivity extends AppCompatActivity {
     }
 
     private void replaceFragmento(ListFavoriteMRFragment f){
+
+        getFragmentManager().beginTransaction().replace(R.id.fragmentHolder, f).commit();
+    }
+
+    private void replaceFragmentos(ListFavoriteApodFragment f){
 
         getFragmentManager().beginTransaction().replace(R.id.fragmentHolder, f).commit();
     }

@@ -7,4 +7,6 @@
     <string name="addFavorites">Adding to favorites</string>
     <string name="apod">APOD:</string>
     <string name="menuListFragment_refresh">Refresh</string>
+    <string name="flist_favoriteapod_titulo">Favorite APOD</string>
+    <string name="menuRedes_favoritesAPOD">APOD Favorite</string>
 </resources>

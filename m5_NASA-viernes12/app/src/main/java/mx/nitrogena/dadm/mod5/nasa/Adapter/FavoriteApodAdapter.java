@@ -21,64 +21,65 @@ import butterknife.BindView;
 import butterknife.ButterKnife;
 import mx.nitrogena.dadm.mod5.nasa.R;
 import mx.nitrogena.dadm.mod5.nasa.fragment.ListFavoriteMRFragment;
+import mx.nitrogena.dadm.mod5.nasa.model.FavoriteAPODModel;
 import mx.nitrogena.dadm.mod5.nasa.model.FavoriteMarsRoverModel;
 import mx.nitrogena.dadm.mod5.nasa.sql.OperacionesDatos;
 
 import static android.app.PendingIntent.getActivity;
 
 /**
- * Created by USUARIO on 25/09/2016.
+ * Created by USUARIO on 03/10/2016.
  */
 
-public class FavoriteRMAdapter extends RecyclerView.Adapter<FavoriteRMAdapter.FavoriteRMViewHolder>{
+public class FavoriteApodAdapter extends RecyclerView.Adapter<FavoriteApodAdapter.FavoriteApodViewHolder>{
 
-    ArrayList<FavoriteMarsRoverModel> arrLstFavoriteMrMle;
+    ArrayList<FavoriteAPODModel> arrLstFavoriteApMle;
     Activity activity;
 
     private OperacionesDatos operacionesDatos;
 
 
-    public FavoriteRMAdapter(ArrayList<FavoriteMarsRoverModel> arrLstFavoriteMrMle, Activity activity) {
+    public FavoriteApodAdapter(ArrayList<FavoriteAPODModel> arrLstFavoriteApMle, Activity activity) {
         //constructor, pasamos la lista de contactos que se coloca en el objeto global que esta arriba
-        this.arrLstFavoriteMrMle = arrLstFavoriteMrMle;
+        this.arrLstFavoriteApMle = arrLstFavoriteApMle;
         this.activity = activity;
     }
 
     @Override
-    public FavoriteRMViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
+    public FavoriteApodViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
         //se pone el layout del cardview
-        View vista = LayoutInflater.from(parent.getContext()).inflate(R.layout.fragment_itemlist_favoritemr, parent, false);
+        View vista = LayoutInflater.from(parent.getContext()).inflate(R.layout.fragment_itemlist_favoriteapod, parent, false);
         //mandamos la vista al constructor viewHolder
-        return new FavoriteRMViewHolder(vista);
+        return new FavoriteApodViewHolder(vista);
     }
 
     @Override
-    public void onBindViewHolder(FavoriteRMViewHolder holder, int position) {
+    public void onBindViewHolder(FavoriteApodViewHolder holder, int position) {
         //se invoca cada que se va recorriendo la lista de  arrLstFavoriteMrMle
         //holder fue creado en la public static class de abajo
-        final FavoriteMarsRoverModel modelItem = arrLstFavoriteMrMle.get(position);
+        final FavoriteAPODModel modelItem = arrLstFavoriteApMle.get(position);
 
         //se tiene acceso a los elementos view y lo asocia con el contenido
         Picasso.with(holder.img.getContext())
-                .load(modelItem.imgSrc)
+                .load(modelItem.url)
                 .into(holder.img);
 
-        holder.tvEarthDate.setText(modelItem.earthDate);
-        holder.tvCameraFullName.setText(modelItem.cameraFullName);
-        holder.tvRoverLanding.setText(modelItem.roverLandingDate);
+        holder.tvDate.setText(modelItem.date);
+        holder.tvTitle.setText(modelItem.title);
+        holder.tvCopy.setText(modelItem.copyright);
 
         holder.img.setOnClickListener(new View.OnClickListener(){
 
             @Override
             public void onClick(View v) {
-                Toast.makeText(activity, modelItem.imgSrc, Toast.LENGTH_SHORT).show();
+                Toast.makeText(activity, modelItem.url, Toast.LENGTH_SHORT).show();
                 Snackbar.make(v, "Delete?", Snackbar.LENGTH_LONG)
                         .setAction("Yes", new View.OnClickListener() {
                             @Override
                             public void onClick(View v) {
-                                Log.i("Snackbar", "hizo clic en snacbar favoritos");
+                                Log.i("Snackbar", "hizo clic en snacbar favoritos APOD");
                                 operacionesDatos = new OperacionesDatos(activity);
-                                operacionesDatos.eliminarFavoriteMR(modelItem);
+                                operacionesDatos.eliminarFavoriteApod(modelItem);
 
 
                                 //getFragmentManager().beginTransaction().replace(R.id.fragmentHolder, ListFavoriteMRFragment.newInstance("names")).commit();
@@ -94,22 +95,22 @@ public class FavoriteRMAdapter extends RecyclerView.Adapter<FavoriteRMAdapter.Fa
     @Override
     public int getItemCount() {
 
-        return arrLstFavoriteMrMle.size();
+        return arrLstFavoriteApMle.size();
     }
 
-    public static class FavoriteRMViewHolder extends RecyclerView.ViewHolder {
+    public static class FavoriteApodViewHolder extends RecyclerView.ViewHolder {
 
         //se agregaron el 24 sept, declaramos las view
-        @BindView(R.id.fitemlist_favoritemr_tv_earthDate)
-        TextView tvEarthDate;
-        @BindView(R.id.fitemlist_favoritemr_tv_camera_fullName) TextView tvCameraFullName;
-        @BindView(R.id.fitemlist_favoritemr_iv_img)
+        @BindView(R.id.fitemlist_favoriteapod_tv_date)
+        TextView tvDate;
+        @BindView(R.id.fitemlist_favoriteapod_tv_title) TextView tvTitle;
+        @BindView(R.id.fitemlist_favoriteapod_iv_img)
         ImageView img;
-        @BindView(R.id.fitemlist_favoritemr_tv_roverLanding) TextView tvRoverLanding;
+        @BindView(R.id.fitemlist_favoriteapod_tv_copy) TextView tvCopy;
 
 
         //constructor que tomara cada elemento que compone el layout
-        public FavoriteRMViewHolder(View itemView) {
+        public FavoriteApodViewHolder(View itemView) {
             super(itemView);
             ButterKnife.bind(this, itemView);
 
