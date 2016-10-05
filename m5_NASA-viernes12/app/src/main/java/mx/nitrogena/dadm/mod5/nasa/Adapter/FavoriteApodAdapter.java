@@ -1,7 +1,9 @@
 package mx.nitrogena.dadm.mod5.nasa.Adapter;
 
 import android.app.Activity;
+import android.content.Intent;
 import android.support.design.widget.Snackbar;
+import android.support.v4.app.FragmentTransaction;
 import android.support.v7.widget.RecyclerView;
 import android.util.Log;
 import android.view.LayoutInflater;
@@ -19,7 +21,10 @@ import java.util.ArrayList;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;
+import mx.nitrogena.dadm.mod5.nasa.DetailActivity;
+import mx.nitrogena.dadm.mod5.nasa.ListActivity;
 import mx.nitrogena.dadm.mod5.nasa.R;
+import mx.nitrogena.dadm.mod5.nasa.fragment.ListFavoriteApodFragment;
 import mx.nitrogena.dadm.mod5.nasa.fragment.ListFavoriteMRFragment;
 import mx.nitrogena.dadm.mod5.nasa.model.FavoriteAPODModel;
 import mx.nitrogena.dadm.mod5.nasa.model.FavoriteMarsRoverModel;
@@ -73,17 +78,20 @@ public class FavoriteApodAdapter extends RecyclerView.Adapter<FavoriteApodAdapte
             @Override
             public void onClick(View v) {
                 Toast.makeText(activity, modelItem.url, Toast.LENGTH_SHORT).show();
-                Snackbar.make(v, "Delete?", Snackbar.LENGTH_LONG)
+                Snackbar.make(v, R.string.qDelete, Snackbar.LENGTH_LONG)
                         .setAction("Yes", new View.OnClickListener() {
                             @Override
                             public void onClick(View v) {
                                 Log.i("Snackbar", "hizo clic en snacbar favoritos APOD");
                                 operacionesDatos = new OperacionesDatos(activity);
                                 operacionesDatos.eliminarFavoriteApod(modelItem);
+                                Toast.makeText(activity, R.string.msgEliminado, Toast.LENGTH_SHORT).show();
 
+
+                            }
 
                                 //getFragmentManager().beginTransaction().replace(R.id.fragmentHolder, ListFavoriteMRFragment.newInstance("names")).commit();
-                            }
+
                         })
                         .show();
             }

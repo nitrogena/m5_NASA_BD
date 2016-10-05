@@ -132,7 +132,7 @@ public class ListFragment extends Fragment {
 
                 //Toast.makeText(getActivity(), "Hola", Toast.LENGTH_LONG ).show();
                 setRefreshActionButtonState(true);
-                Snackbar.make(getView(), "REFRESH", Snackbar.LENGTH_SHORT).show();
+                Snackbar.make(getView(), R.string.refresh, Snackbar.LENGTH_SHORT).show();
                 //setRefreshActionButtonState(false);
 
                 return true;

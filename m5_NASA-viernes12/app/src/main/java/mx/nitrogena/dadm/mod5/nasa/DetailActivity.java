@@ -137,7 +137,7 @@ public class DetailActivity extends AppCompatActivity  implements View.OnClickLi
             case R.id.menuRedes_favorites:
 
                 //Agregar a favoritos a la base de datos
-                Snackbar.make(findViewById(android.R.id.content), "Favorites", Snackbar.LENGTH_SHORT).show();
+                Snackbar.make(findViewById(android.R.id.content), R.string.addFavorites, Snackbar.LENGTH_SHORT).show();
 
                 OperacionesDatos db = new OperacionesDatos(DetailActivity.this);
                 agregarFavoritos(db);

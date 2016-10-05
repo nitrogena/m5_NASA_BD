@@ -44,8 +44,11 @@
     <string name="apod">APOD: </string>
     <string name="menuListFragment_refresh">Refresh</string>
     <string name="flist_favoriteapod_titulo">Favorite APOD</string>
-    <string name="menuRedes_favoritesMR">MR Favorite</string>
-    <string name="menuRedes_favoritesAPOD">APOD Favorite</string>
+    <string name="menuRedes_favoritesMR">MR Favorite Images</string>
+    <string name="menuRedes_favoritesAPOD">APOD Favorite Images</string>
+    <string name="msgEliminado">Deleted item</string>
+    <string name="qDelete">Delete?</string>
+    <string name="refresh">Refresh done</string>
 
 
 </resources>

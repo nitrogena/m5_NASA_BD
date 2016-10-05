@@ -32,7 +32,7 @@ import mx.nitrogena.dadm.mod5.nasa.sql.OperacionesDatos;
 public class ListFavoriteApodFragment extends Fragment{
 
     private OperacionesDatos operacionesDatos;
-
+    private Menu optionsMenu;
     //private ListView listView;
 
     @BindView(R.id.rvFavoriteAPOD)
@@ -83,6 +83,8 @@ public class ListFavoriteApodFragment extends Fragment{
 
     @Override
     public void onCreateOptionsMenu(Menu menu, MenuInflater inflater){
+        this.optionsMenu = menu;
+
         inflater.inflate(R.menu.menu_list_fragment, menu);
         super.onCreateOptionsMenu(menu, inflater);
     }
@@ -93,7 +95,8 @@ public class ListFavoriteApodFragment extends Fragment{
             case R.id.menuListFragment_share_today_apod:
                 //Toast.makeText(getActivity(), "Hola", Toast.LENGTH_LONG ).show();
 
-                Snackbar.make(getView(), "REFRESH", Snackbar.LENGTH_SHORT).show();
+                setRefreshActionButtonState(true);
+                Snackbar.make(getView(), R.string.refresh, Snackbar.LENGTH_SHORT).show();
 
 
                 return true;
@@ -103,6 +106,19 @@ public class ListFavoriteApodFragment extends Fragment{
                 return super.onOptionsItemSelected(item);
         }
 
+    }
+
+    public void setRefreshActionButtonState(final boolean refreshing) {
+        if (optionsMenu != null) {
+            final MenuItem refreshItem = optionsMenu.findItem(R.id.menuListFragment_share_today_apod);
+            if (refreshItem != null) {
+                if (refreshing) {
+                    refreshItem.setActionView(R.layout.actionbar_indeterminate_progress);
+                } else {
+                    refreshItem.setActionView(null);
+                }
+            }
+        }
     }
 
 

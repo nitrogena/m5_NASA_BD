@@ -72,7 +72,7 @@ public class FavoriteRMAdapter extends RecyclerView.Adapter<FavoriteRMAdapter.Fa
             @Override
             public void onClick(View v) {
                 Toast.makeText(activity, modelItem.imgSrc, Toast.LENGTH_SHORT).show();
-                Snackbar.make(v, "Delete?", Snackbar.LENGTH_LONG)
+                Snackbar.make(v, R.string.qDelete, Snackbar.LENGTH_LONG)
                         .setAction("Yes", new View.OnClickListener() {
                             @Override
                             public void onClick(View v) {
@@ -80,7 +80,7 @@ public class FavoriteRMAdapter extends RecyclerView.Adapter<FavoriteRMAdapter.Fa
                                 operacionesDatos = new OperacionesDatos(activity);
                                 operacionesDatos.eliminarFavoriteMR(modelItem);
 
-
+                                Toast.makeText(activity, R.string.msgEliminado, Toast.LENGTH_SHORT).show();
                                 //getFragmentManager().beginTransaction().replace(R.id.fragmentHolder, ListFavoriteMRFragment.newInstance("names")).commit();
                             }
                         })

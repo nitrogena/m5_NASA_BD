@@ -103,7 +103,7 @@ public class TodayApodFragment extends Fragment {
             @Override
             public void onResponse(Call<APOD> call, Response<APOD> response) {
                 //ESTAMOS OBTENIENDO LOS VALORES DEL JSON QUE USAMOS
-                Log.d("LOG APOD: ", response.body().getTitle());
+                Log.d("LOG APOD mediaType: ", response.body().getMediaType());
 
                 tvCopyright.setText(response.body().getCopyright());
                 tvDate.setText(response.body().getDate());
@@ -116,13 +116,16 @@ public class TodayApodFragment extends Fragment {
 
                 strUrl = response.body().getUrl();
 
-                if (response.body().getMediaType() == "image") {
+                strMediaType = response.body().getMediaType();
+
+                /*if (strMediaType == ": image") {*/
                     Picasso.with(getActivity()).load(strUrl).into(ivImg);
-                }
+                    Log.d("APOD: tupe ", response.body().getMediaType());
+                /*}
                 else{
                     ivImg.setImageResource(R.drawable.bright_moon_48);
                     //ivImg.setImageResource(R.mipmap.ic_launcher);
-                }
+                }*/
 
                 /*PARA GUARDAR EN BD*/
 
@@ -130,7 +133,7 @@ public class TodayApodFragment extends Fragment {
                 strDate = response.body().getDate();
                 strExplanation = response.body().getExplanation();
 
-                strMediaType = response.body().getMediaType();
+
                 strServiceVersion = response.body().getServiceVersion();
                 strTitle = response.body().getTitle();
 
